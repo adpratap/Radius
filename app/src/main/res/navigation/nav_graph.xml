@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/facilitiesFragment">
+
+    <fragment
+        android:id="@+id/facilitiesFragment"
+        android:name="com.noreplypratap.radius.view.fragments.FacilitiesFragment"
+        android:label="fragment_facilities"
+        tools:layout="@layout/fragment_facilities" >
+        <action
+            android:id="@+id/action_facilitiesFragment_to_roomsFragment"
+            app:destination="@id/roomsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomsFragment"
+        android:name="com.noreplypratap.radius.view.fragments.RoomsFragment"
+        android:label="RoomsFragment" >
+        <action
+            android:id="@+id/action_roomsFragment_to_othersFragment"
+            app:destination="@id/othersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/othersFragment"
+        android:name="com.noreplypratap.radius.view.fragments.OthersFragment"
+        android:label="OthersFragment" >
+        <action
+            android:id="@+id/action_othersFragment_to_resultFragment"
+            app:destination="@id/resultFragment"
+            app:popUpTo="@id/facilitiesFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.noreplypratap.radius.view.fragments.ResultFragment"
+        android:label="ResultFragment" />
+</navigation>
